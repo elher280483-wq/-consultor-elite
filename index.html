@@ -2,6 +2,14 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HYYS77SQLD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HYYS77SQLD');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Consultor Elite™ | Elías Hernández</title>
 <meta name="description" content="Programa intensivo de 3 días. 3, 4 y 5 de julio 2026. Solo 15 lugares.">
@@ -443,6 +451,23 @@ function shareWhatsApp() {
   var waUrl = 'https://wa.me/?text=' + encodeURIComponent(text + '\n\n' + url);
   window.open(waUrl, '_blank');
 }
+
+function trackWhatsApp() {
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      'event_category': 'WhatsApp',
+      'event_label': 'Consultor Elite - Clic WhatsApp',
+      'value': 500
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var waLinks = document.querySelectorAll('a[href*="wa.me/5218181617130"]');
+  for (var i = 0; i < waLinks.length; i++) {
+    waLinks[i].addEventListener('click', trackWhatsApp);
+  }
+});
 
 function updateCountdown() {
   var t = new Date('2026-07-03T08:00:00-06:00').getTime();
