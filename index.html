@@ -10,6 +10,21 @@
   gtag('js', new Date());
   gtag('config', 'G-HYYS77SQLD');
 </script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '3375768109375055');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3375768109375055&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Consultor Elite™ | Elías Hernández</title>
 <meta name="description" content="Programa intensivo de 3 días. 3, 4 y 5 de julio 2026. Solo 15 lugares.">
@@ -458,6 +473,13 @@ function trackWhatsApp() {
       'event_category': 'WhatsApp',
       'event_label': 'Consultor Elite - Clic WhatsApp',
       'value': 500
+    });
+  }
+  if (typeof fbq === 'function') {
+    fbq('track', 'Contact', {
+      content_name: 'WhatsApp - Consultor Elite',
+      value: 500,
+      currency: 'MXN'
     });
   }
 }
